@@ -1,0 +1,3 @@
+import Ferme
+
+maferme = Ferme()
