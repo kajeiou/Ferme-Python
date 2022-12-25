@@ -7,11 +7,11 @@ class Animal:
 
 class Chat(Animal):
     def cri(self):
-        print(type(self).__name__, self.nom, "a milauler : Miaou!")
+        print(type(self).__name__, self.nom, "a milaulé : Miaou!")
 
 class Chien(Animal):
     def cri(self):
-        print(type(self).__name__, self.nom,"a aboyer: Ouaf Ouaf!" )
+        print(type(self).__name__, self.nom,"a aboyé: Ouaf Ouaf!" )
     
 class Ferme:
     def __init__(self, animaux =[]):
