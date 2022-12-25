@@ -1,25 +1,25 @@
 class Animal:
-    def __int__(self, nom, age):
+    def __init__(self, nom, age):
         self.nom = nom
         self.age = age
     def cri(self, cri):
         return print(cri)
 
 class Chat(Animal):
-    def cri(self, cri):
-        cri = "Miaou"
-        print(cri)
+    def cri(self):
+        print(type(self).__name__, self.nom, "a milauler : Miaou!")
 
 class Chien(Animal):
-    def cri(self, cri):
-        cri = "Ouaf"
-        print(cri)
-
-class Ferme():
-    def __int__(self, animaux):
+    def cri(self):
+        print(type(self).__name__, self.nom,"a aboyer: Ouaf Ouaf!" )
+    
+class Ferme:
+    def __init__(self, animaux =[]):
         self.animaux = animaux
     def ajouter_animal(self, animal):
         self.animaux.append(animal)
-    def nbAnimaux(self):
+    def get_nb_animaux(self):
         return len(self.animaux)
+    def __str__(self):
+        return "La ferme contient " + str(self.get_nb_animaux()) + " animaux."
 
