@@ -54,8 +54,10 @@ class Ferme:
             
     def tuer(self,nom):
         killed = False
+        # Parcours des animaux
         for i in range(len(self.animaux)):
             if self.animaux[i].nom == nom:
+                # Suppression de l'animal trouvé par nom
                 del self.animaux[i]
                 return True
         return killed

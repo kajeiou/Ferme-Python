@@ -6,21 +6,26 @@ from Ferme import Chat
 
 clear = lambda: os.system('cls')
    
+# Initiation du menu
 exitedMenu = False
+# Initiation d'un object Ferme
 maferme = Ferme()
  
 # Script du Menu
 while(exitedMenu == False):
+    # Affichage du menu
     print("\n[1] pour Ajouter un animal,[2] Lancer le cri des animaux, [3] Tuer un animal, [4] Voir le nombre d'animaux, [5] pour Quitter")
     print("________________")
 
     selectedOption = str(input("Choisissez une option : "))
     print(selectedOption)
     
-    # Choix listage des personnes
+    # Choix ajout d'un animal
     if(selectedOption== "1"):
         clear()
         print("| Ajout d'un nouvel animal |")
+        
+        # Formulaire ajout d'un animal
         print("[1] pour Chat ou [2] pour Chien")
         option = 0
         while option != "1" and option != "2":
@@ -28,29 +33,32 @@ while(exitedMenu == False):
             
         nom = str(input("Entrez un nom : "))
         age = str(input("Entrez un âge : "))
+        # Si Option Chat
         if option == "1" :
             nouveau = Chat(nom,age)
+        # Si option Chien
         elif option == "2":
             nouveau = Chien(nom,age)
         clear()
         maferme.ajouter_animal(nouveau)
                 
-
-    # Choix ajout d'une personne
+    # Choix cris des animaux
     elif(selectedOption == "2"):
         clear()
         print("| Cris des animaux |")
         maferme.crier()
 
                         
-    # Choix édition d'une personne
+    # Choix tuer un animal
     elif(selectedOption =="3"):
         clear()
         print("| Meurtre d'un animal |")
         nom_animal = ""
         if(maferme.contient_animaux()):
             while(nom_animal == ""):
+                # Affichage des noms d'animaux existants
                 maferme.get_noms()
+                # Formulaire nom de l'animal à tuer
                 nom_animal = str(input("Entrez le nom de l'animal à tuer : "))
                 if nom_animal != "":
                     clear()
@@ -63,7 +71,7 @@ while(exitedMenu == False):
             print("Aucun animal à tuer")
         
 
-    # Choix suppression d'une personne
+    # Choix Voir nombre d'animaux dans la ferme
     elif(selectedOption == "4"):
         clear()
         print("| Voir le nombre d'animaux |")    
